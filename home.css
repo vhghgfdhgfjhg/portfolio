@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background: url('1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ECF0F1;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header, footer {
+    color: #ECF0F1;
+    text-align: center;
+    padding: 1em 0;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0.5em;
+}
+
+nav ul li a {
+    color: #ECF0F1;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ECF0F1;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+section {
+    padding: 2em;
+    transition: all 0.5s ease;
+}
+
+section:target {
+    padding: 4em;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    font-size: 2em;
+    color: #ECF0F1;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        margin: 0.5em 0;
+    }
+    .social-icons a {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header, footer {
+        padding: 0.5em 0;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 0.5em 0;
+    }
+    .social-icons a {
+        font-size: 1.2em;
+    }
+}
